@@ -1,0 +1,17 @@
+
+<configuration>
+    <property name="CRM_LOG" value="logs/crm.log"/>
+    <!-- <property name="SMS_LOG" value="logs/sms.log"/> -->
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <file>${CRM_LOG}</file>
+        <encoder>
+            <pattern>%yellow(%d{dd-MM-yy HH:mm:ss}) %cyan([%thread]) %blue([%-5level]) %green([%logger{36}]) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+ 
